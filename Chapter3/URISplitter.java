@@ -3,7 +3,7 @@ import java.net.URISyntaxException;
 
 public class URISplitter {
     public static void main(String args[]) {
-        splitter("file:/C:/Users/james/Desktop/test.jar!/test.txt");
+        splitter("https://www.google.com/search?q=bca%25network%25programming&sca_esv=d74bb12263120869&ei=0H9zZsjZCImTseMP6cOckA4&ved=0ahUKEwjIgZeI_uiGAxWJSWwGHekhB-IQ4dUDCBA&uact=5&oq=bca%25network%25programming&gs_lp=Egxnd3Mtd2l6LXNlcnAiF2JjYSVuZXR3b3JrJXByb2dyYW1taW5nMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHSLJLUM0dWI1AcAJ4AJABAJgBAKABAKoBALgBA8gBAPgBAZgCAqACDpgDAIgGAZAGBJIHATKgBwA&sclient=gws-wiz-serp");
     }
 
     private static void splitter(String url) {
@@ -30,6 +30,7 @@ public class URISplitter {
                 }
                 System.out.println("The path is " + u.getPath());
                 System.out.println("The query string is " + u.getQuery());
+                System.out.println("The query string is " + u.getRawQuery());
                 System.out.println("The fragment ID is " + u.getFragment());
             }
         } catch (URISyntaxException ex) {

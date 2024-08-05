@@ -2,7 +2,7 @@ import java.net.*;
 public class URLDemo{    
     public static void main(String[] args){    
         try{    
-            URL url=new URL("https://user:password@www.example.com:8080/search?q=eic&oq=eic&sourceid=chrome&ie=UTF-8");    
+            URL url=new URL("https://user:password@www.example.com:8080/search?q=eic&oq=eic&sourceid=chrome&ie=UTF-8#test");    
                 
             System.out.println("Protocol: "+url.getProtocol());    
             System.out.println("Host Name: "+url.getHost());    
@@ -12,6 +12,7 @@ public class URLDemo{
             System.out.println("Path: "+url.getPath());    
             System.out.println("File: "+url.getFile());    
             System.out.println("Authority: "+url.getAuthority());    
+            System.out.println("Fragment: "+url.getRef());    
             
         }catch(Exception e){
             System.out.println(e);

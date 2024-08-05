@@ -11,15 +11,15 @@ public class DownloadWebPage {
             // Open the URLConnection for reading
             URL u = new URL(url);
             URLConnection uc = u.openConnection();
-            try (InputStream raw = uc.getInputStream()) { // autoclose
-                InputStream buffer = new BufferedInputStream(raw);
-                // chain the InputStream to a Reader
-                Reader reader = new InputStreamReader(buffer);
-                int c;
-                while ((c = reader.read()) != -1) {
-                    System.out.print((char) c);
+            BufferedReader readr = new BufferedReader(new InputStreamReader(uc.getInputStream()));
+                BufferedWriter writer = new BufferedWriter(new FileWriter("Download.html"));
+                String line;
+                while ((line = readr.readLine()) != null) {
+                    writer.write(line);
                 }
-            }
+                readr.close();
+                writer.close();
+                System.out.println("Successfully Downloaded");
         } catch (MalformedURLException ex) {
             System.err.println(url + " is not a parseable URL");
         } catch (IOException ex) {

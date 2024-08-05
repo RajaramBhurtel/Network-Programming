@@ -1,5 +1,5 @@
 // Java program to illustrate various
-// Inet4Address class methods
+// InetAddress class methods
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -7,9 +7,8 @@ import java.util.Arrays;
 
 public class Inet4Add {
     public static void main(String args[]) throws UnknownHostException {
-        String url = "www.rajarambhurtel.com.np";
-        Inet4Address ip1 = (Inet4Address) Inet4Address.getByName(url);
-        Inet4Address ip2 = (Inet4Address) InetAddress.getByName("www.rajarambhurtel.com.np");
+        InetAddress ip1 = InetAddress.getByName("www.rajarambhurtel.com.np");
+        InetAddress ip2 = InetAddress.getByName("www.google.com");
 
         // Following methods checks the property of the thus created object.
         // getAddress() method

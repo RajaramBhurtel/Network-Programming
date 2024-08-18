@@ -5,7 +5,7 @@ import java.io.*;
 class ClientChat {
 
     public static void main(String args[]) throws Exception {
-        Socket s = new Socket("127.0.0.1", 8888);
+        Socket s = new Socket("192.168.1.153", 8888);
         
         DataInputStream din = new DataInputStream(s.getInputStream());
         DataOutputStream dout = new DataOutputStream(s.getOutputStream());

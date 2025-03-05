@@ -4,6 +4,8 @@ import java.util.Arrays;
 public class InetDemo2 {
     public static void main(String[] arg) throws Exception {
         InetAddress ip = InetAddress.getByName("localhost");
+        InetAddress ip3 = InetAddress.getByName("localhost");
+        // InetAddress ip3 = InetAddress.getLocalHost();
         InetAddress ip1[] = InetAddress.getAllByName("localhost");
         byte[] addr = { 72, 3, 2, 12 };
         System.out.println("ip : " + ip);
@@ -23,6 +25,6 @@ public class InetDemo2 {
         System.out.print("\nisMulticastAddress : " + ip.isMulticastAddress());
         System.out.print("\nisSiteLocalAddress : " + ip.isSiteLocalAddress());
         System.out.print("\nhashCode : " + ip.hashCode());
-        System.out.print("\n Is ip1 == ip2 : " + ip.equals(ip2));
+        System.out.print("\n Is ip1 == ip3 : " + ip.equals(ip3));
     }
 }

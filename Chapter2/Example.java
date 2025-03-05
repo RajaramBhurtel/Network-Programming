@@ -3,7 +3,7 @@ import java.net.UnknownHostException;
 public class Example {  
 public static void main(String[] args) {  
   try {  
-      InetAddress id = InetAddress.getByName("rajarambhurtel.com.np");  
+      InetAddress id = InetAddress.getByName("facebook.com");  
       // System.out.println( id);  
       System.out.println( id.getCanonicalHostName());  
       System.out.println( id.getHostName());  

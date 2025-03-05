@@ -25,5 +25,14 @@ public class AllHeaders {
                 break;
             System.out.println(uc.getHeaderFieldKey(j) + ": " + header);
         }
+        // uc.setRequestProperty("test", "125");
+        //     System.out.println(uc.getRequestProperty("test") );
+
+        //  for (int j = 1;; j++) {
+        //     String header = uc.getHeaderField(j);
+        //     if (header == null)
+        //         break;
+        //     System.out.println(uc.getHeaderFieldKey(j) + ": " + header);
+        // }
     }
 }

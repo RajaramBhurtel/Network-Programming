@@ -35,6 +35,15 @@ public class NetInterface {
                 System.out.println("Hardware Address: " +
                         Arrays.toString(iface.getHardwareAddress()));
 
+                byte[] hardwareAddress = iface.getHardwareAddress();
+                if (hardwareAddress != null) {
+                String[] hexadecimalFormat = new String[hardwareAddress.length];
+                for (int i = 0; i < hardwareAddress.length; i++) {
+                    hexadecimalFormat[i] = String.format("%02X", hardwareAddress[i]);
+                }
+                System.out.println(String.join("-", hexadecimalFormat));
+            }
+
                 // getParent() method
                 System.out.println("Parent: " + iface.getParent());
 

@@ -1,5 +1,5 @@
 
-package urls.uris;
+// package urls.uris;
 
 import java.io.*;
 import java.net.*;
@@ -10,7 +10,7 @@ public class SourceViewer {
            
             try {
                 
-                URL url = new URL("http://localhost/wordpress/wp-admin/");
+                URL url = new URL("https://www.google.com");
                 
                 BufferedReader readr = new BufferedReader(new InputStreamReader(url.openStream()));
                 BufferedWriter writer = new BufferedWriter(new FileWriter("Download.html"));

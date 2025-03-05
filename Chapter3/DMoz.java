@@ -10,7 +10,7 @@ public class DMoz {
         Scanner sc = new Scanner(System.in);
         String query = sc.nextLine();
         try {
-            URL u = new URL("https://www.bing.com/search?q" + query);
+            URL u = new URL("https://www.google.com/search?q=" + query);
             try (InputStream in = new BufferedInputStream(u.openStream())) {
                 InputStreamReader theHTML = new InputStreamReader(in);
                 int c;

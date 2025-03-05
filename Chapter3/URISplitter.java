@@ -11,7 +11,7 @@ public class URISplitter {
             URI u = new URI(url);
             System.out.println("The URI is " + u);
             if (u.isOpaque()) {
-                System.out.println("This is an opaque URI.");
+                System.out.println("This is an non hierarchical URI.");
                 System.out.println("The scheme is " + u.getScheme());
                 System.out.println("The scheme specific part is "
                         + u.getSchemeSpecificPart());

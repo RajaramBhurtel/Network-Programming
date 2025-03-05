@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package urls.uris;
+// package urls.uris;
 
 import java.net.*;
 
@@ -11,6 +11,7 @@ import java.net.*;
 public class RelativeUri {
     public static void main(String[] args) throws URISyntaxException  {
         URI absolute = new URI("http://www.example.com/");
+        URI rel = new URI("http://www.example.com/images/drive/logo.png");
         URI relative = new URI("images/logo.png");
         URI resolved = absolute.resolve(relative);
         
@@ -20,7 +21,7 @@ public class RelativeUri {
         
         System.out.println("resolved:"+resolved);
         
-      URI res = absolute.relativize(resolved);
+      URI res = absolute.relativize(rel);
       
        System.out.println("resolved:"+res);
     }

@@ -8,6 +8,7 @@ public class InterfaceLister {
         while (interfaces.hasMoreElements()) {
             NetworkInterface ni = interfaces.nextElement();
             System.out.println("Interface Name: " + ni.getDisplayName());
+            System.out.println("Interface Name: " + ni.getName());
         }
     }
 }

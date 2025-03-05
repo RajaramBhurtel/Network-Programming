@@ -1,11 +1,10 @@
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+import java.net.*;
 
 public class SpamCheck {
-    public static final String BlackHole = "spamhaus.org/sbl";
+    public static final String BlackHole = "sbl.spamhaus.org";
 
     public static void main(String[] args) {
-        String[] spamList = { "207.34.56.23", "125.12.32.4", "127.0.0.2" };
+        String[] spamList = { "156.240.120.0", "207.34.56.23", "125.12.32.4", "127.0.0.2" };
         for (String spam : spamList) {
             if (isSpam(spam)) {
                 System.out.println("Spam found! " + spam);

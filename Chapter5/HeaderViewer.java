@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class HeaderViewer {
     public static void main(String[] args) {
-        String url="https://chandanbhagat.com.np";
+        String url="https://rajarambhurtel.com.np";
         try {
             headerView(url);
         } catch (MalformedURLException ex) {

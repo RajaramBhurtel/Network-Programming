@@ -65,6 +65,9 @@ public class FormPoster {
         FormPoster poster = new FormPoster(url);
         poster.add("name", "Elliotte Rusty Harold");
         poster.add("email", "elharo@ibiblio.org");
+        poster.add("College", "EIC");
+        poster.add("Phone", "9808000000");
+        poster.add("Color", "Red");
         try (InputStream in = poster.post()) {
             // Read the response
             Reader r = new InputStreamReader(in);

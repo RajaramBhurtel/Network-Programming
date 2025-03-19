@@ -1,4 +1,3 @@
-package Lab.Unit7;
 
 import java.net.*;
 import java.io.*;
@@ -8,6 +7,7 @@ public class DaytimeServer {
   public final static int PORT = 13; // 13
   public static void main(String[] args) {  
    try (ServerSocket server = new ServerSocket(PORT)) {
+    System.out.println("Day Time Server Started...");
      while (true) {
        try (Socket connection = server.accept()) {
          Writer out = new OutputStreamWriter(connection.getOutputStream());

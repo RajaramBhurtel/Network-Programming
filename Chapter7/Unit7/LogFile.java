@@ -1,5 +1,3 @@
-package Lab.Unit7;
-
 import java.util.logging.*;
 public class LogFile {
     private static  Logger log = Logger.getLogger("request");

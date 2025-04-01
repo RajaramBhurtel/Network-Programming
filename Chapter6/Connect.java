@@ -6,10 +6,12 @@ public class Connect {
             Socket s = new Socket();
             SocketAddress add = new InetSocketAddress("time.nist.gov", 13);
             s.connect(add);
-            InputStream in = s.getInputStream();
-            InputStreamReader isr = new InputStreamReader(in, "ASCII");
-            BufferedReader br = new BufferedReader(isr);
-            br.lines().forEach(System.out::println);
+            System.out.println(s.getRemoteSocketAddress());
+            System.out.println(s.getLocalSocketAddress());
+            // InputStream in = s.getInputStream();
+            // InputStreamReader isr = new InputStreamReader(in, "ASCII");
+            // BufferedReader br = new BufferedReader(isr);
+            // br.lines().forEach(System.out::println);
             s.close();
         }
         catch (IOException ex) {

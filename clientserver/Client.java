@@ -10,8 +10,7 @@ public class Client {
         public Client() throws Exception {
                
                 Socket socket = new Socket("127.0.0.1",2023);
-                System.out.println("Successful connection to the server.");
-               
+                System.out.println("Successful connection to the server." +socket);
                 BufferedReader in_socket = new BufferedReader (new InputStreamReader (socket.getInputStream()));
                 PrintWriter out_socket = new PrintWriter (new OutputStreamWriter (socket.getOutputStream()), true);
                 Scanner keyboard = new Scanner (System.in);

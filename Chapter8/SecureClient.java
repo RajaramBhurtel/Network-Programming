@@ -7,10 +7,20 @@ public class SecureClient {
     public static void main(String[] args) {
         try{
             SSLSocketFactory factory = (SSLSocketFactory) SSLSocketFactory.getDefault();
-            System.out.println(factory);
             SSLSocket socket = (SSLSocket) factory.createSocket("tufohss.edu.np", 443);
+            System.out.println(socket);
             String[] support = socket.getSupportedCipherSuites();
-            socket.setEnabledCipherSuites(support);
+            // socket.setEnabledCipherSuites(support);
+            System.out.println("Supported Cipher Suites:");
+            for (String cipher : support) {
+                System.out.println(cipher);
+            }
+            String[] enabled = socket.getEnabledCipherSuites();
+            // socket.setEnabledCipherSuites(support);
+            System.out.println("Enabled Cipher Suites:");
+            for (String cipher : enabled) {
+                System.out.println(cipher);
+            }
             Writer out = new OutputStreamWriter(socket.getOutputStream(), "US-ASCII");
             out.write("GET http://tufohss.edu.np/ HTTP/1.1\r\n");
             out.write("Host:tufohss.edu.np \r\n");

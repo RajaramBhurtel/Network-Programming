@@ -19,6 +19,8 @@ public class SecureOrderTaker {
     public final static int PORT = 7000;
     public final static String algorithm = "SSL";
 
+    // keytool -genkeypair -alias myserver -keyalg RSA -keysize 2048 -storetype JKS -keystore jnp4e.keys -validity 3650
+
     public static void main(String[] args) {
         try {
             SSLContext context = SSLContext.getInstance(algorithm);

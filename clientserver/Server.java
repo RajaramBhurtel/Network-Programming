@@ -13,6 +13,8 @@ public class Server {
                 System.out.println("Port 2023 is open.");
                
                 Socket socket = server_socket.accept();
+                System.out.println(socket);
+
                 System.out.println("Client " + socket.getInetAddress() + " has connected.");
                
 

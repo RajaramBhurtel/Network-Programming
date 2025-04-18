@@ -15,6 +15,7 @@ import javax.net.ssl.SSLSocketFactory;
 public class ClientSocket {
     public static void main(String[] args) {
         try{
+            
             Socket s =SSLSocketFactory.getDefault().createSocket("localhost", 1422);
             System.out.println("Server connected:"+s);
             s.close();

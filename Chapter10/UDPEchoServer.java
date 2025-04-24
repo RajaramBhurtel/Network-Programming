@@ -1,28 +1,29 @@
-package com.oreilly.jnp4;
-
-import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
-public class UDPEchoServer extends UDPServer {
+public class UdpEchoServer {
+    public static void main(String[] args) throws Exception {
+        DatagramSocket socket = new DatagramSocket(5000);
+        byte[] buffer = new byte[1024];
 
-    public final static int DEFAULT_PORT = 7;
+        System.out.println("UDP Echo Server started on port 5000...");
 
-    public UDPEchoServer() {
-        super(DEFAULT_PORT);
-    }
+        while (true) {
+            DatagramPacket request = new DatagramPacket(buffer, buffer.length);
+            socket.receive(request); // Receive data from client
 
-    @Override
-    public void respond(DatagramSocket socket, DatagramPacket packet)
-            throws IOException {
-        DatagramPacket outgoing = new DatagramPacket(packet.getData(),
-                packet.getLength(), packet.getAddress(), packet.getPort());
-        socket.send(outgoing);
-    }
+            String received = new String(request.getData(), 0, request.getLength());
+            System.out.println("Received from client: " + received);
 
-    public static void main(String[] args) {
-        UDPServer server = new UDPEchoServer();
-        Thread t = new Thread(server);
-        t.start();
+            // Echo back the same message
+            DatagramPacket response = new DatagramPacket(
+                    request.getData(),
+                    request.getLength(),
+                    request.getAddress(),
+                    request.getPort()
+            );
+
+            socket.send(response);
+        }
     }
 }

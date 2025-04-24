@@ -10,7 +10,7 @@ public class UDPServer {
             System.out.println("UDP server started");
             byte[] b = new byte[1024];
             DatagramPacket dp = new DatagramPacket(b, b.length);
-            ds.receive(dp);
+            ds.receive(dp); 
             String str = new String(dp.getData(), 0, dp.getLength());
             System.out.println(str);
             int a = Integer.parseInt(str);

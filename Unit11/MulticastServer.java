@@ -1,5 +1,3 @@
-package Lab.Unit11;
-
 import java.io.IOException;
 import java.net.*;
 
@@ -11,7 +9,7 @@ public class MulticastServer {
 
         try (DatagramSocket ss = new DatagramSocket()) {
           for(int i=0;i<5;i++){
-              String msg = "Sent Message server no" + i;
+              String msg = "Sent Message server no " + i;
                 DatagramPacket msgPacket = new DatagramPacket(msg.getBytes(),msg.getBytes().length,addr,PORT);
                 ss.send(msgPacket);
                 System.out.println("Socket Server send msg:" + msg);
